@@ -1,0 +1,111 @@
+/* Global Mobile & Tablet Fixes */
+@media screen and (max-width: 991px) {
+    /* Prevent aggressive horizontal scrolling */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    /* Wrap all main containers */
+    .w-container, 
+    .section-wrapper, 
+    .container-slider, 
+    .proj-copy-contain {
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix typography scaling */
+    .feat-head, 
+    .home-headline, 
+    .h1-project-page,
+    .h1-about,
+    .proj-subhead {
+        font-size: clamp(32px, 8vw, 60px) !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+    }
+
+    /* Ensure flex blocks stack vertically */
+    .proj-col, 
+    .w-row, 
+    .columns, 
+    .home-desc,
+    .featured-header-container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .w-col {
+        width: 100% !important;
+    }
+
+    /* Fix image scaling */
+    img, .img-cover, .project-img {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
+    }
+
+    /* Sliders and case study lists should fit the screen */
+    .list.w-dyn-items {
+        width: 100% !important;
+    }
+
+    .item.w-dyn-item {
+        width: 100% !important;
+    }
+
+    .img-track {
+        opacity: 0.3 !important;
+        z-index: -1 !important;
+        pointer-events: none !important;
+        mix-blend-mode: overlay;
+    }
+    
+    .about-headline-wrap {
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    /* Navbar fixes */
+    .nav {
+        width: 100% !important;
+    }
+    .menu-button {
+        display: block !important;
+        position: relative !important;
+        right: 0px !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* Tighter adjustments for small phones */
+    .feat-head, 
+    .home-headline, 
+    .h1-project-page,
+    .h1-about {
+        font-size: clamp(28px, 10vw, 40px) !important;
+    }
+    
+    .proj-copy-contain {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .custom-mockup-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0 !important;
+    }
+
+    .img-wrap {
+        height: auto !important;
+        min-height: 250px !important;
+    }
+}
