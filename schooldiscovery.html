@@ -58,6 +58,29 @@
                 flex-direction: column !important;
             }
         }
+        .custom-mockup-grid {
+            display: grid;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            padding: 0 5%;
+        }
+        .custom-mockup-grid.grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .custom-mockup-grid.grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media (max-width: 991px) {
+            .custom-mockup-grid.grid-4, .custom-mockup-grid.grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 479px) {
+            .custom-mockup-grid.grid-4, .custom-mockup-grid.grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -331,7 +354,7 @@
             </div>
         </div>
     </main>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 80px auto; padding: 0 5%;">
+    <div class="custom-mockup-grid grid-3">
         <div style="display: flex; flex-direction: column; align-items: center;"><img src="assets/images/high1.jpg" alt="Low Fi Mockup 1" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;" /></div>
         <div style="display: flex; flex-direction: column; align-items: center;"><img src="assets/images/high2.jpg" alt="Low Fi Mockup 2" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;" /></div>
         <div style="display: flex; flex-direction: column; align-items: center;"><img src="assets/images/high3.jpg" alt="Low Fi Mockup 3" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;" /></div>
@@ -353,7 +376,7 @@
             </div>
         </div>
     </main>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 80px auto; padding: 0 5%;">
+    <div class="custom-mockup-grid grid-4">
         <div style="display: flex; flex-direction: column; align-items: center;"><img src="assets/images/low1.png" alt="High Fi 1" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;" /></div>
         <div style="display: flex; flex-direction: column; align-items: center;"><img src="assets/images/low2.jpg" alt="High Fi 2" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;" /></div>
         <div style="display: flex; flex-direction: column; align-items: center;"><img src="assets/images/low3.jpg" alt="High Fi 3" style="width: 100%; height: auto; object-fit: contain; border-radius: 8px;" /></div>
