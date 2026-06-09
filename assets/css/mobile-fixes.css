@@ -315,6 +315,27 @@
     .home-hero {
         display: none !important;
     }
+
+    /* Mobile/about main image ratio overrides (ONLY applied on mobile) */
+    .page-wrap .image-space-wrap .img-wrap-home,
+    .home-desc .div-block-76 .main-img-wrap,
+    .home-desc .div-block-76 .img-container {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1170 / 1321 !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+
+    .page-wrap .image-space-wrap .img-wrap-home img,
+    .home-desc .div-block-76 .img-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: bottom center !important;
+        display: block !important;
+        max-width: none !important;
+    }
 }
 
 /* Tighter adjustments for small phones (max-width: 767px) */
@@ -357,27 +378,6 @@
         white-space: nowrap !important;
         font-size: min(8.5vw, 40px) !important;
     }
-}
-
-/* Global matches for home/about main image ratio */
-.page-wrap .image-space-wrap .img-wrap-home,
-.home-desc .div-block-76 .main-img-wrap,
-.home-desc .div-block-76 .img-container {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 1170 / 1321 !important;
-    overflow: hidden !important;
-    position: relative !important;
-}
-
-.page-wrap .image-space-wrap .img-wrap-home img,
-.home-desc .div-block-76 .img-container img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: bottom center !important;
-    display: block !important;
-    max-width: none !important;
 }
 
 /* Neon Sweep reveal animation keyframes */
