@@ -84,94 +84,103 @@
         z-index: 100000 !important;
     }
 
-    /* 5. About Page Layout Stacking (Prevents Overlapping & Stretched viewport) */
+    /* 5. About Page Floating Images Overrides (max-width: 991px) */
     .about-intro-wrap {
-        height: auto !important;
         position: relative !important;
+        height: 100vh !important;
+        width: 100% !important;
+        overflow: hidden !important;
     }
 
     .header-wrap {
-        height: auto !important;
         position: relative !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        overflow: visible !important;
+        width: 100% !important;
+        height: 100vh !important;
+        display: block !important;
+        overflow: hidden !important;
         border-bottom: none !important;
     }
 
     .about-headline-wrap {
-        position: relative !important;
-        height: auto !important;
+        position: absolute !important;
+        inset: 0 !important;
         width: 100% !important;
-        padding: 100px 5% 20px 5% !important;
+        height: 100% !important;
         display: flex !important;
         flex-direction: column !important;
+        justify-content: center !important;
         align-items: flex-start !important;
-        justify-content: flex-start !important;
-        z-index: 10 !important;
+        padding: 0 8% !important;
+        z-index: 20 !important; /* Forces text to always sit on top of images */
         box-sizing: border-box !important;
+        background: transparent !important;
     }
 
     .about-header {
-        font-size: clamp(28px, 7vw, 40px) !important;
-        line-height: 1.2 !important;
+        font-size: clamp(28px, 7vw, 42px) !important;
+        line-height: 1.25 !important;
+        color: #ffffff !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important; /* Adds contrast */
     }
 
-    /* Hide the second photo track section completely on mobile to show only one profile photo */
+    .img-track {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        z-index: 1 !important;
+        transform: none !important;
+    }
+
+    .about-img-wrap {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
+        transform: none !important;
+    }
+
+    /* Hide the second duplicate about-img-wrap section on mobile to avoid photo overcrowding */
     .about-img-wrap:nth-child(n+2) {
         display: none !important;
     }
 
-    .img-track {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        position: relative !important;
-        width: 100% !important;
-        height: auto !important;
-        margin: 20px auto 40px auto !important;
-        overflow: hidden !important;
-        transform: none !important;
-        z-index: 5 !important;
-    }
-
-    .about-img-wrap {
-        display: flex !important;
-        justify-content: center !important;
-        width: 100% !important;
-        position: relative !important;
-        height: auto !important;
-        transform: none !important;
-    }
-
-    .img01 {
+    /* Size and fade the floating images, scattering them behind the text */
+    .img01, .img02, .img03, .img04, .img05 {
         display: block !important;
-        position: relative !important;
-        width: 80% !important;
-        max-width: 320px !important;
+        position: absolute !important;
+        width: 32% !important;
+        max-width: 130px !important;
         height: auto !important;
-        aspect-ratio: 1 / 1.25 !important;
-        margin: 0 auto !important;
-        transform: none !important;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: auto !important;
-        z-index: 5 !important;
+        aspect-ratio: 1 / 1.35 !important;
+        opacity: 0.65 !important; /* Soft fade in background */
+        z-index: 1 !important;
+        border-radius: 6px !important;
     }
 
-    .img01 img {
+    .img01 img, .img02 img, .img03 img, .img04 img, .img05 img {
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        border-radius: 12px !important;
+        border-radius: 6px !important;
     }
 
-    /* Hide the rest of the scattered images so they don't break layout or overlap text */
-    .img02, .img03, .img04, .img05, .img06, .img07, .img08, .img09 {
-        display: none !important;
+    /* Scatter using absolute offsets framing the text */
+    .img01 {
+        inset: 8% auto auto 8% !important; /* top-left */
+    }
+    .img02 {
+        inset: 15% 6% auto auto !important; /* top-right */
+    }
+    .img03 {
+        inset: 48% auto auto 12% !important; /* mid-left */
+    }
+    .img04 {
+        inset: auto 8% 18% auto !important; /* bottom-right */
+    }
+    .img05 {
+        inset: auto auto 8% 6% !important; /* bottom-left */
     }
 
     /* 6. Homepage Profile Image Fix */
